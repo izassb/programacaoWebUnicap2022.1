@@ -1,0 +1,259 @@
+* {
+  font-family: "pp_pangram_sans_roundedmedium";
+  color: #fffef8;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #A6E3E9;
+}
+
+.title {
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  text-align: center;
+  background: #71C9CE;
+  box-shadow: 0 1vw 1vw 0.5vw #97e0e4;
+  backdrop-filter: blur(0.5vh);
+}
+
+h1 {
+  margin: 0;
+  padding: 2vw;
+  font-family: "newakedemo";
+  font-size: 6vh;
+  font-weight: 100;
+}
+
+.add-new-task {
+  width: 100vw;
+  margin: 3.5vw 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-new-task input {
+  height: 3.5vh;
+  width: 55vw;
+  margin: 0 2vw;
+  padding: 0 1.5vw;
+  color: #000000cd;
+  font-size: 2vh;
+  background: #fffef8;
+  border-radius: 2.5vh;
+  border: none;
+}
+
+.add-new-task input::placeholder {
+  color: #00000099;
+  font-size: 2vh;
+  font-weight: bold;
+}
+
+.material-symbols-sharp:hover {
+  cursor: pointer;
+}
+
+.add-new-task span {
+  font-size: 6vh;
+  user-select: none;
+}
+
+.add-new-task span:hover {
+  font-weight: bolder;
+  -webkit-text-fill-color: #78f7f7;
+  -webkit-text-stroke: #fffef8 0.125vh;
+}
+
+ul {
+  padding-inline-start: 0;
+  list-style-type: none;
+}
+
+li {
+  height: 8.5vh;
+  width: 97vw;
+  margin: 0 1.5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#todo-list li, #done-list li:hover {
+  background: #34dddd;
+}
+
+#todo-list li:nth-child(odd) {
+  background: #34dddd;
+}
+
+#todo-list li:hover, #todo-list li:nth-child(odd):hover, #done-list li {
+  background: #56e1eb66;
+}
+
+.task-end {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 3vw;
+  user-select: none;
+}
+
+.task-end span {
+  font-size: 3.5vh;
+  user-select: none;
+}
+
+span[id^="btEdit_"] {
+  margin-right: 2vw;
+}
+
+span[id^='btEdit_'].edit-on {
+  margin: 0 0 0 2vw;
+}
+
+.checkbox-container {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 8.5vh;
+  font-size: 2.25vh;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-container input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  background: #ccc;
+}
+
+.checkmark {
+  height: 3.5vh;
+  width: 3.5vh;
+  position: absolute;
+  left: 2.5vh;
+  background: #eee;
+}
+
+.checkmark:after {
+  height: 1.4vh;
+  width: 0.7vh;
+  content: "";
+  display: none;
+  position: absolute;
+  left: 1.26vh;
+  top: 0.7vh;
+  border: solid white;
+  border-width: 0 0.42vh 0.42vh 0;
+  transform: rotate(45deg);
+}
+.show-more {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  user-select: none;
+  cursor: pointer;
+}
+
+#expand-button, #expand-icon {
+  font-weight: bolder;
+  color: #01243a;
+}
+
+#expand-button {
+  height: 4vh;
+  padding: 0 1vw;
+  display: flex;
+  align-items: center;
+  font-size: 2.2vh;
+  background: #fffef8;
+  border-radius: 2.5vh;
+}
+
+#expand-icon {
+  position: relative;
+  top: 0.15vh;
+  font-size: 2.5vh;
+}
+
+#expand-button:hover, #expand-button:hover span {
+  color: #fffef8;
+  background: #A6E3E9;
+}ner input:checked ~ .checkmark {
+  background: #2196F3;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.confirmbox-background {
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: rgb(0,0,0);
+  background: rgba(0,0,0,0.4);
+}
+
+.confirmbox {
+  height: 10vh;
+  width: 55vw;
+  padding: 2.5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fffef8;
+}
+
+.confirmbox-text {
+  color: #01243a;
+  font-weight: bold;
+}
+
+#cancel, #delete {
+  color: #aaa;
+  font-size: 28px;
+  user-select: none;
+}
+
+#cancel:hover, #delete:hover {
+  -webkit-text-stroke: #01243a 2px;
+  -webkit-text-fill-color: #fffef8;
+}
+
+#done-list, input[id^="inEdit_"], #done-list span[id^='btEdit_'], span[id^="cancelEdit_"], span[id^='text_'].edit-on, span[id^='remove_'].edit-on {
+  display: none;
+}
+
+span[id^="cancelEdit_"].edit-on {
+  display: inline-block;
+}
+
+input.edit-on {
+  all: unset;
+  width: 85vw;
+  font-size: 2.25vh;
+  color: #fffef8;
+  text-decoration: underline red 0.3vh;
+}

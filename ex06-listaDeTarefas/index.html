@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parse/3.4.1/parse.min.js"></script>
+    <link rel="icon" href="./assets/icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,1,0" />
+<body>
+    <div class="title">
+        <h1>Lista de tarefas</h1>
+    </div>
+    <div class="add-new-task">
+        <input id="new-task" placeholder="Adicionar nova tarefa" />
+        <span id="add-task" class="material-symbols-sharp">add_circle</span>
+    </div>
+    <ul id="todo-list"></ul>
+    <div class="show-more">
+        <span id="expand-button">Tarefas Concluídas
+            <span id="expand-icon" class="material-symbols-sharp">expand_more</span>
+        </span>
+    </div>
+    <ul id="done-list"></ul>
+    <div class="confirmbox-background">
+        <div class="confirmbox">
+            <span id="cancel" class="material-symbols-sharp">arrow_back</span>
+            <span class="confirmbox-text">Apagar este item?</span>
+            <span id="delete" class="material-symbols-sharp">delete_forever</span>
+        </div>
+    </div>
+</body>
+</html>
